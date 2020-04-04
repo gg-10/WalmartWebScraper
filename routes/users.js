@@ -66,7 +66,8 @@ router.get('/users/all', isAuthenticatedUser, (req, res)=> {
             res.render('./users/alluser', {users : users});
         })
         .catch(err => {
-            console.log(err);
+        req.flash('error_msg', 'ERROR: '+err);
+        res.redirect('/user/all');
         })
 });
 
