@@ -39,7 +39,7 @@ app.use(session({
     saveUninitialized : true
 }));
 
-// passport middlewares need to after the session initialization
+// passport middlewares  need to after the session initialization
 app.use(passport.initialize());
 app.use(passport.session());
 // User.authenticate is a method of passport, we can use our own function there or use bcrypt
